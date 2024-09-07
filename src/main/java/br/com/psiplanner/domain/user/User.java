@@ -1,8 +1,8 @@
 package br.com.psiplanner.domain.user;
 
 import br.com.psiplanner.domain.auth.Role;
+import br.com.psiplanner.domain.person.Person;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -25,27 +25,19 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private String password;
 
-    @Email
-    @Column(nullable = false, unique = true)
-    private String email;
-
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_roles",
                joinColumns = @JoinColumn(name = "user_id"),
                inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "person_id")
+    private Person person;
+
     private Boolean active;
 
     public User() {}
-
-    public User(Long id, String username, String password, String email) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.active = true;
-    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -81,14 +73,6 @@ public class User implements UserDetails {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public @Email String getEmail() {
-        return email;
-    }
-
-    public void setEmail(@Email String email) {
-        this.email = email;
     }
 
     public void setRoles(Set<Role> roles) {
