@@ -2,6 +2,7 @@ package br.com.psiplanner.domain.person;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
+import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.validator.constraints.br.CPF;
 
 import java.util.Date;
@@ -37,6 +38,8 @@ public class Person {
     private String gender;
 
     private String ethnicity;
+
+    private Boolean active;
 
     public Person() {}
 
@@ -110,5 +113,13 @@ public class Person {
 
     public void setEthnicity(String ethnicity) {
         this.ethnicity = ethnicity;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 }
