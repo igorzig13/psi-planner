@@ -1,4 +1,4 @@
-package br.com.psiplanner.controller;
+package br.com.psiplanner.controller.person;
 
 import br.com.psiplanner.domain.person.Person;
 import br.com.psiplanner.service.PersonService;
