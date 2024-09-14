@@ -18,6 +18,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         body.put("timestamp", System.currentTimeMillis());
         body.put("error", ex.getMessage());
         body.put("message", "An error occurred");
+        body.put("exception", ex.toString());
 
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(body);
     }

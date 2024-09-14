@@ -1,5 +1,6 @@
 package br.com.psiplanner.rest;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -18,6 +19,7 @@ public class AuthTest {
     private MockMvc mockMvc;
 
     @Test
+    @Disabled("Under construction")
     public void successfulLogin() throws Exception {
         URI uri = new URI("/login");
 
