@@ -3,15 +3,13 @@ package br.com.psiplanner.domain.user;
 import br.com.psiplanner.domain.auth.Role;
 import br.com.psiplanner.domain.person.Person;
 import jakarta.persistence.*;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User implements UserDetails {
 
     @Id
@@ -40,7 +38,7 @@ public class User implements UserDetails {
     public User() {}
 
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
+    public Set<Role> getAuthorities() {
         return roles;
     }
 
@@ -81,5 +79,13 @@ public class User implements UserDetails {
 
     public void setActive(Boolean active) {
         this.active = active;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
     }
 }
