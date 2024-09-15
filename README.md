@@ -24,18 +24,30 @@ Later on you will be able to read an in-depth documentation and see images of th
 
 ### How to run
 
-First, clone the repository to your local machine:
-    `git clone https://github.com/igorzig13/psi-planner.git`
-Then, navigate to the project directory:
-    `cd /your/path/to/psi-planner`
-Make sure you have Java 17 installed on your machine. You can verify this by running:
-    `java -version` or `java --version`
-If Java 17 is not installed, download and install it from the official Java website or use a package manager suitable for your operating system.
-On the project directory, use Gradle to build the project. Run the following command:
-    `./gradlew build`
-After building the project, you can run the application using:
+1. Clone the repository to your local machine:
+    ```bash
+   git clone https://github.com/igorzig13/psi-planner.git
+   ```
+2. Navigate to the project directory:
+    ```bash
+   cd /your/path/to/psi-planner
+   ```
+3. Make sure you have Java 17 installed on your machine. You can verify this by running:
+    ```bash
+   java --version
+   ```
+   - To ensure compatibility and avoid licensing issues, it is recommended to use OpenJDK 17.
+
+4. On the project directory, use Gradle to build the project. Run the following command:
+    ```bash
+   ./gradlew build
+   ```
+5. After building the project, you can run the application using:
+
     `./gradlew bootRun`
-Now, by accessing `http://localhost:8080` you should see a welcome page confirming the application is running. 
+
+
+6. Now, by accessing `http://localhost:8080` you should see a welcome page confirming the application is running. 
 
 ### Endpoints and documentation
 
