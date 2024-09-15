@@ -40,6 +40,7 @@ public class SecurityConfig {
                 .addFilterAfter(new JWTFilter(), UsernamePasswordAuthenticationFilter.class)
                 .authorizeHttpRequests( (requests) -> requests
                         .requestMatchers("/", "/login").permitAll()
+                        .requestMatchers("/css/**").permitAll()
                         .requestMatchers(SWAGGER_WHITELIST).permitAll()
                         .requestMatchers("/user/register").permitAll()
                         .requestMatchers("/person/**").hasRole("ADMIN")

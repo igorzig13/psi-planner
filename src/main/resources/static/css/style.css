@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4c8;
+    color: #3e435a;
+    text-align: center;
+}
+
+a {
+    color: #3c9521;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    font-size: 1.2em;
+}
