@@ -1,4 +1,4 @@
-package br.com.psiplanner.controller.auth;
+package br.com.psiplanner.controller;
 
 import br.com.psiplanner.domain.auth.Login;
 import br.com.psiplanner.domain.auth.Session;
