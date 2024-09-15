@@ -11,24 +11,35 @@ It uses Spring Boot powered with technologies like:
 - Spring Web
 - Spring Data JPA
 - Spring Security
-- Validation
+- Spring Validation
 - Flyway Migration
-- Thymeleaf
 - PostgreSQL
 - SwaggerUI
+- Thymeleaf (just for rendering a welcome page)
 
 ## Attention: Work in progress!
 
 This API and any front-end related to it are in early stages of development.
 Later on you will be able to read an in-depth documentation and see images of the application as a whole.
 
-### Project structure
+### How to run
 
-TODO
+First, clone the repository to your local machine:
+    `git clone https://github.com/igorzig13/psi-planner.git`
+Then, navigate to the project directory:
+    `cd /your/path/to/psi-planner`
+Make sure you have Java 17 installed on your machine. You can verify this by running:
+    `java -version` or `java --version`
+If Java 17 is not installed, download and install it from the official Java website or use a package manager suitable for your operating system.
+On the project directory, use Gradle to build the project. Run the following command:
+    `./gradlew build`
+After building the project, you can run the application using:
+    `./gradlew bootRun`
+Now, by accessing `http://localhost:8080` you should see a welcome page confirming the application is running. 
 
 ### Endpoints and documentation
 
-TODO
+You can explore the API endpoints interactively by visiting `http://localhost:8080/swagger-ui.html` while the application is running.
 
 ### About the major project
 
