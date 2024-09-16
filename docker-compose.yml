@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_DB: psiplanner-db
+      POSTGRES_USER: psiplanner
+      POSTGRES_PASSWORD: psiplanner
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+  springbootapp:
+    build: .
+    container_name: springbootapp
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/psiplanner-db
+      SPRING_DATASOURCE_USERNAME: psiplanner
+      SPRING_DATASOURCE_PASSWORD: psiplanner
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

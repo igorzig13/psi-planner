@@ -39,7 +39,7 @@ public class SecurityConfig {
         http
                 .addFilterAfter(new JWTFilter(), UsernamePasswordAuthenticationFilter.class)
                 .authorizeHttpRequests( (requests) -> requests
-                        .requestMatchers("/", "/login").permitAll()
+                        .requestMatchers("/", "/login", "/user/register").permitAll()
                         .requestMatchers("/css/**").permitAll()
                         .requestMatchers(SWAGGER_WHITELIST).permitAll()
                         .requestMatchers("/user/register").permitAll()
