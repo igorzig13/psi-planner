@@ -44,8 +44,9 @@ Later on you will be able to read an in-depth documentation and see images of th
    ```
 5. After building the project, you can run the application using:
 
-    `./gradlew bootRun`
-
+   ```bash
+    ./gradlew bootRun
+   ```
 
 6. Now, by accessing `http://localhost:8080` you should see a welcome page confirming the application is running. 
 

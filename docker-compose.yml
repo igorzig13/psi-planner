@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   postgres:
     image: postgres:latest
@@ -10,6 +8,8 @@ services:
       POSTGRES_PASSWORD: psiplanner
     ports:
       - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     networks:
       - app-network
 
@@ -20,6 +20,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/psiplanner-db
       SPRING_DATASOURCE_USERNAME: psiplanner
       SPRING_DATASOURCE_PASSWORD: psiplanner
+      SECURITY_CONST_KEY: ${SECURITY_CONST_KEY}
     ports:
       - "8080:8080"
     depends_on:
@@ -30,3 +31,6 @@ services:
 networks:
   app-network:
     driver: bridge
+
+volumes:
+  postgres_data:
