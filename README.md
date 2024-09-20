@@ -3,6 +3,7 @@
 ![Gradle](https://img.shields.io/badge/gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white)
 ![Hibernate](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white)
 ![Postgres](https://img.shields.io/badge/postgresql-4169e1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 
 ## Psi Planner API
 
@@ -15,11 +16,12 @@ It uses Spring Boot powered with technologies like:
 - Flyway Migration
 - PostgreSQL
 - SwaggerUI
+- Docker and Docker-Compose
 - Thymeleaf (just for rendering a welcome page)
 
 ## Attention: Work in progress!
 
-This API and any front-end related to it are in early stages of development.
+This API and any back-end related feature are in early stages of development, expect lots of updates in the coming months.
 Later on you will be able to read an in-depth documentation and see images of the application as a whole.
 
 ### How to run
@@ -32,30 +34,40 @@ Later on you will be able to read an in-depth documentation and see images of th
     ```bash
    cd /your/path/to/psi-planner
    ```
-3. Make sure you have Java 17 installed on your machine. You can verify this by running:
+3. Make sure you have Docker installed on your machine. You can verify this by running:
     ```bash
-   java --version
+   docker --version
    ```
-   - To ensure compatibility and avoid licensing issues, it is recommended to use OpenJDK 17.
+   - If you are not using IntelliJ integration, which is highly recommended, make sure you also have docker-compose intalled.
 
 4. On the project directory, use Gradle to build the project. Run the following command:
     ```bash
    ./gradlew build
    ```
-5. After building the project, you can run the application using:
+5. After building the project, reach the `src/main/java/PsiPlannerApplication.java` on IntelliJ and click the play button on the main method.
+An error message will be shown, don't worry. Now in the upper right corner of the editor, click 'Edit configurations...'
 
+6. Choose to run 'PsiPlannerApplication' on 'Docker Compose...' and make sure to select the `springbootapp` service.
+Then, just click 'next' and 'create'. This will allow you to easily debug the application even when running it on a container.
+
+7. Open the 'docker-compose.yml' file, 'play' the postgres service. Alternatively you can run:
    ```bash
-    ./gradlew bootRun
+   docker-compose up postgres
    ```
-
-6. Now, by accessing `http://localhost:8080` you should see a welcome page confirming the application is running. 
+   
+8. Run PsiPlannerApplication again. Now, by accessing http://localhost:8080 you should see a welcome page confirming the application is running.
+Alternatively you can simply run:
+   ```bash
+   docker-compose up springbootapp
+   ```
 
 ### Endpoints and documentation
 
-You can explore the API endpoints interactively by visiting `http://localhost:8080/swagger-ui.html` while the application is running.
+By now, you can explore the API endpoints interactively by visiting `http://localhost:8080/swagger-ui.html` while the application is running.
 
 ### About the major project
 
-Psi Planner is a way  to connect therapists and other Psychology professionals with their customers or patients.
-It allows clinics and other establishments to register their professionals, while the final clients can check their
-agenda and availability, thus being able to make appointments.
+Psi Planner is intended to be a way to connect the clients and/or patients with therapists and other Psychology professionals.
+It will allow clinics to register their professionals (self-employed professionals can register themselves), while the final clients can check their
+schedule and availability, being able to make appointment bookings to therapy sessions, psychological tests and assessments with just a few clicks.
+Professionals will have a centralized dashboard to manage their appointments, schedule and to monitor important metrics to enhance their practice.
