@@ -19,6 +19,13 @@ It uses Spring Boot powered with technologies like:
 - Docker and Docker-Compose
 - Thymeleaf (just for rendering a welcome page)
 
+### About the major project
+
+Psi Planner is intended to be a way to connect the clients and/or patients with therapists and other Psychology professionals.
+It will allow clinics to register their professionals (self-employed professionals can register themselves), while the final clients can check their
+schedule and availability, being able to make appointment bookings to therapy sessions, psychological tests and assessments with just a few clicks.
+Professionals will have a centralized dashboard to manage their appointments, schedule and to monitor important metrics to enhance their practice.
+
 ## Attention: Work in progress!
 
 This API and any back-end related feature are in early stages of development, expect lots of updates in the coming months.
@@ -64,10 +71,3 @@ Alternatively you can simply run:
 ### Endpoints and documentation
 
 By now, you can explore the API endpoints interactively by visiting `http://localhost:8080/swagger-ui.html` while the application is running.
-
-### About the major project
-
-Psi Planner is intended to be a way to connect the clients and/or patients with therapists and other Psychology professionals.
-It will allow clinics to register their professionals (self-employed professionals can register themselves), while the final clients can check their
-schedule and availability, being able to make appointment bookings to therapy sessions, psychological tests and assessments with just a few clicks.
-Professionals will have a centralized dashboard to manage their appointments, schedule and to monitor important metrics to enhance their practice.
